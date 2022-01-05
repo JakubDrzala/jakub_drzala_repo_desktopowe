@@ -4,12 +4,16 @@
  */
 package com.mycompany.zapisodczyt;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.System.Logger.Level;
 import java.util.Scanner;
+import java.util.logging.Level;
 import java.util.logging.Logger;
+
+
+
 
 
 
@@ -26,6 +30,7 @@ public class ZapisOdczytDemo extends javax.swing.JFrame {
      */
     public ZapisOdczytDemo() {
         initComponents();
+        a = new File("text.txt");
     }
 
     /**
@@ -89,20 +94,6 @@ public class ZapisOdczytDemo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jB_odczytActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_odczytActionPerformed
-        
-        String data = jTextArea1.getText();
-        try {
-            FileWriter fw = new FileWriter(a);
-            fw.write(data);
-            jTextArea1.setText("");
-            fw.close();
-        }
-        catch (IOException ex){
-            Logger.getLogger(ZapisOdczytDemo.class.getName()).log(Level.SEVERE,null,ex);
-        }
-    }//GEN-LAST:event_jB_odczytActionPerformed
-
-    private void jB_zapisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_zapisActionPerformed
         try{
             Scanner sc = new Scanner(a);
             String data ="";
@@ -114,6 +105,21 @@ public class ZapisOdczytDemo extends javax.swing.JFrame {
         catch (FileNotFoundException ex){
             Logger.getLogger(ZapisOdczytDemo.class.getName()).log(Level.SEVERE,null,ex);
         }
+    }//GEN-LAST:event_jB_odczytActionPerformed
+
+    private void jB_zapisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_zapisActionPerformed
+        String data = jTextArea1.getText();
+        try {
+            FileWriter fw = new FileWriter(a);
+            fw.write(data);
+            jTextArea1.setText("");
+            fw.close();
+        }
+        catch (IOException ex){
+            Logger.getLogger(ZapisOdczytDemo.class.getName()).log(Level.SEVERE,null,ex);
+        }
+  
+        
     }//GEN-LAST:event_jB_zapisActionPerformed
     
     /**
@@ -148,9 +154,12 @@ public class ZapisOdczytDemo extends javax.swing.JFrame {
             public void run() {
                 new ZapisOdczytDemo().setVisible(true);
             }
+            
+
         });
+        
     }
-    
+    private File a;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jB_odczyt;
