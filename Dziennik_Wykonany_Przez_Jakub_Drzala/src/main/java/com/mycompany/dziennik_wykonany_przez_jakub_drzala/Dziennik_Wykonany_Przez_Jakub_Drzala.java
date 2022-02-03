@@ -4,7 +4,6 @@
  */
 package com.mycompany.dziennik_wykonany_przez_jakub_drzala;
 
-<<<<<<< HEAD
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -13,8 +12,6 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-=======
->>>>>>> c547c123aa0c14b7b76720a237479b9ea89bfca7
 /**
  *
  * @author drzalajakub
@@ -27,11 +24,9 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
     public Dziennik_Wykonany_Przez_Jakub_Drzala() {
         initComponents();
         setLocationRelativeTo(null);
-<<<<<<< HEAD
+
         a = new File("JakubDrzala.txt");
         
-=======
->>>>>>> c547c123aa0c14b7b76720a237479b9ea89bfca7
     }
 
     /**
@@ -49,7 +44,6 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-<<<<<<< HEAD
         jTF_imie = new javax.swing.JTextField();
         jTF_nazwisko = new javax.swing.JTextField();
         jCB_klasa = new javax.swing.JComboBox<>();
@@ -60,7 +54,6 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jB_odczyt = new javax.swing.JButton();
         jB_zapis = new javax.swing.JButton();
-=======
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -71,7 +64,6 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
->>>>>>> c547c123aa0c14b7b76720a237479b9ea89bfca7
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -93,7 +85,6 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel5.setText("Ocena:");
 
-<<<<<<< HEAD
         jTF_imie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTF_imieActionPerformed(evt);
@@ -117,7 +108,6 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
         jS_oceny.setPaintTicks(true);
         jS_oceny.setToolTipText("1");
         jS_oceny.setValue(1);
-=======
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -141,7 +131,6 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
         jSlider1.setPaintTicks(true);
         jSlider1.setToolTipText("1");
         jSlider1.setValue(1);
->>>>>>> c547c123aa0c14b7b76720a237479b9ea89bfca7
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setText("Wszystkie wpisy:");
@@ -150,7 +139,6 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-<<<<<<< HEAD
         jB_odczyt.setText("Wczytaj dane");
         jB_odczyt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,11 +152,9 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
                 jB_zapisActionPerformed(evt);
             }
         });
-=======
         jButton1.setText("Wczytaj dane");
 
         jButton2.setText("Zapisz dane");
->>>>>>> c547c123aa0c14b7b76720a237479b9ea89bfca7
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -178,32 +164,25 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-<<<<<<< HEAD
                 .addComponent(jB_odczyt)
-=======
                 .addComponent(jButton1)
->>>>>>> c547c123aa0c14b7b76720a237479b9ea89bfca7
                 .addGap(100, 100, 100))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-=======
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jComboBox1, 0, 150, Short.MAX_VALUE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
->>>>>>> c547c123aa0c14b7b76720a237479b9ea89bfca7
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-<<<<<<< HEAD
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,7 +196,6 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
                 .addGap(53, 53, 53)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(28, Short.MAX_VALUE))
-=======
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jTextField1)
@@ -228,7 +206,6 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
                 .addGap(53, 53, 53)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(39, Short.MAX_VALUE))
->>>>>>> c547c123aa0c14b7b76720a237479b9ea89bfca7
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,17 +213,14 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-<<<<<<< HEAD
                     .addComponent(jB_odczyt))
-=======
                     .addComponent(jButton1))
->>>>>>> c547c123aa0c14b7b76720a237479b9ea89bfca7
                 .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
+
                             .addComponent(jTF_imie, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -266,7 +240,6 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
                             .addComponent(jS_oceny, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                         .addComponent(jB_zapis))
-=======
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -286,7 +259,6 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
                             .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                         .addComponent(jButton2))
->>>>>>> c547c123aa0c14b7b76720a237479b9ea89bfca7
                     .addComponent(jScrollPane1))
                 .addGap(40, 40, 40))
         );
@@ -307,7 +279,6 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
     private void jTF_imieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTF_imieActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTF_imieActionPerformed
@@ -347,7 +318,6 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jB_odczytActionPerformed
         
-=======
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
@@ -356,7 +326,6 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
->>>>>>> c547c123aa0c14b7b76720a237479b9ea89bfca7
     /**
      * @param args the command line arguments
      */
@@ -391,7 +360,6 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
             }
         });
     }
-<<<<<<< HEAD
     private File a;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -399,14 +367,12 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
     private javax.swing.JButton jB_zapis;
     private javax.swing.JComboBox<String> jCB_klasa;
     private javax.swing.JComboBox<String> jCB_przedmioty;
-=======
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
->>>>>>> c547c123aa0c14b7b76720a237479b9ea89bfca7
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -414,18 +380,13 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-<<<<<<< HEAD
     private javax.swing.JSlider jS_oceny;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTF_imie;
     private javax.swing.JTextField jTF_nazwisko;
-    private javax.swing.JTextArea jTextArea1;
-=======
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSlider jSlider1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
->>>>>>> c547c123aa0c14b7b76720a237479b9ea89bfca7
     // End of variables declaration//GEN-END:variables
 }
