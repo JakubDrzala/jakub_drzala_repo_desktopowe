@@ -205,8 +205,7 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
                     .addComponent(jButton2))
                 .addGap(53, 53, 53)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
+                .addContainerGap(39, Short.MAX_VALUE);
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -259,9 +258,9 @@ public class Dziennik_Wykonany_Przez_Jakub_Drzala extends javax.swing.JFrame {
                             .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                         .addComponent(jButton2))
-                    .addComponent(jScrollPane1))
-                .addGap(40, 40, 40))
-        );
+                    .addComponent(jScrollPane1)
+                .addGap(40, 40, 40)
+        ;
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
