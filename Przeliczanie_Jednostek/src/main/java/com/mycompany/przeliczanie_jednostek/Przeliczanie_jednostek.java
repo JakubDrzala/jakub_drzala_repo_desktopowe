@@ -4,6 +4,14 @@
  */
 package com.mycompany.przeliczanie_jednostek;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author drzalajakub
@@ -16,6 +24,7 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
     public Przeliczanie_jednostek() {
         initComponents();
         setLocationRelativeTo(null);
+        a = new File("Plik.txt");
     }
 
     /**
@@ -27,6 +36,10 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -49,6 +62,40 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
+
+        jDialog1.setTitle("Historia");
+        jDialog1.setPreferredSize(new java.awt.Dimension(421, 270));
+        jDialog1.setResizable(false);
+
+        jPanel4.setPreferredSize(new java.awt.Dimension(421, 270));
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setAutoscrolls(false);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -168,7 +215,7 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
                         .addComponent(jB_km)
                         .addGap(18, 18, 18)
                         .addComponent(jB_cm)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jB_dm)))
                 .addContainerGap())
         );
@@ -186,7 +233,7 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
                     .addComponent(jB_km)
                     .addComponent(jB_dm)
                     .addComponent(jB_cm))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Odległość", jPanel2);
@@ -195,6 +242,11 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
         jMenu1.setPreferredSize(new java.awt.Dimension(200, 23));
 
         jMenuItem1.setText("Pokaż historię");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
         jMenu1.add(jSeparator1);
 
@@ -245,35 +297,92 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
         float m = (int)jS_m.getValue();
         float km = m /1000;
         jL_wynikOdleglosc.setText(km+"");
+        try {
+            FileWriter fw = new FileWriter(a, true);
+            fw.write("o;"+m+"m;"+km+"km"+"\n");
+            fw.close();
+        }
+        catch (IOException ex){
+            Logger.getLogger(Przeliczanie_jednostek.class.getName()).log(Level.SEVERE,null,ex);
+        }
     }//GEN-LAST:event_jB_kmActionPerformed
 
     private void jB_cmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_cmActionPerformed
         float m = (int)jS_m.getValue();
         float cm = m *100;
         jL_wynikOdleglosc.setText(cm+"");
+        try {
+            FileWriter fw = new FileWriter(a, true);
+            fw.write("o;"+m+"m;"+cm+"cm"+"\n");
+            fw.close();
+        }
+        catch (IOException ex){
+            Logger.getLogger(Przeliczanie_jednostek.class.getName()).log(Level.SEVERE,null,ex);
+        }
     }//GEN-LAST:event_jB_cmActionPerformed
 
     private void jB_dmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_dmActionPerformed
         float m = (int)jS_m.getValue();
         float dm = m *10;
         jL_wynikOdleglosc.setText(dm+"");
+        try {
+            FileWriter fw = new FileWriter(a, true);
+            fw.write("o;"+m+"m;"+dm+"dm"+"\n");
+            fw.close();
+        }
+        catch (IOException ex){
+            Logger.getLogger(Przeliczanie_jednostek.class.getName()).log(Level.SEVERE,null,ex);
+        }
     }//GEN-LAST:event_jB_dmActionPerformed
 
     private void jB_kActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_kActionPerformed
          float c = (int)jS_c.getValue();
          float k = c + 273;
         jL_wynikTemperatura.setText(k+"");
+        try {
+            FileWriter fw = new FileWriter(a, true);
+            fw.write("t;"+c+"c;"+k+"k"+"\n");
+            fw.close();
+        }
+        catch (IOException ex){
+            Logger.getLogger(Przeliczanie_jednostek.class.getName()).log(Level.SEVERE,null,ex);
+        }
     }//GEN-LAST:event_jB_kActionPerformed
 
     private void jB_fActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_fActionPerformed
         float c = (int)jS_c.getValue();
         float f = (c * 9/5) + 32 ;
         jL_wynikTemperatura.setText(f+"");
+        try {
+            FileWriter fw = new FileWriter(a, true);
+            fw.write("t;"+c+"c;"+f+"f"+"\n");
+            fw.close();
+        }
+        catch (IOException ex){
+            Logger.getLogger(Przeliczanie_jednostek.class.getName()).log(Level.SEVERE,null,ex);
+        }
     }//GEN-LAST:event_jB_fActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        jDialog1.setVisible(true);
+        jDialog1.setSize(427,250);
+        jDialog1.setLocationRelativeTo(null);
+        try{
+            Scanner sc = new Scanner(a);
+            String data ="";
+            while(sc.hasNext()){
+                data+=sc.nextLine()+"\n";     
+            }       
+            jTextArea1.setText(data);
+        }
+        catch (FileNotFoundException ex){
+            Logger.getLogger(Przeliczanie_jednostek.class.getName()).log(Level.SEVERE,null,ex);
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -309,13 +418,14 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
             }
         });
     }
-
+    private File a;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jB_cm;
     private javax.swing.JButton jB_dm;
     private javax.swing.JButton jB_f;
     private javax.swing.JButton jB_k;
     private javax.swing.JButton jB_km;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jL_wynikOdleglosc;
     private javax.swing.JLabel jL_wynikTemperatura;
     private javax.swing.JLabel jLabel1;
@@ -329,9 +439,12 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JSpinner jS_c;
     private javax.swing.JSpinner jS_m;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
