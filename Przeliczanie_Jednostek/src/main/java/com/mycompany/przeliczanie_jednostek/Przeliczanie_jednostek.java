@@ -36,10 +36,14 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDialog1 = new javax.swing.JDialog();
+        JDIalog_historia = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTP_temp = new javax.swing.JTextPane();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTP_odl = new javax.swing.JTextPane();
+        jDialog_oprogramie = new javax.swing.JDialog();
+        jLabel3 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -63,38 +67,64 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
 
-        jDialog1.setTitle("Historia");
-        jDialog1.setPreferredSize(new java.awt.Dimension(421, 270));
-        jDialog1.setResizable(false);
+        JDIalog_historia.setTitle("Historia");
+        JDIalog_historia.setPreferredSize(new java.awt.Dimension(421, 270));
+        JDIalog_historia.setResizable(false);
 
-        jPanel4.setPreferredSize(new java.awt.Dimension(421, 270));
+        jPanel4.setPreferredSize(new java.awt.Dimension(300, 500));
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setAutoscrolls(false);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTP_temp.setEditable(false);
+        jScrollPane1.setViewportView(jTP_temp);
+
+        jTP_odl.setEditable(false);
+        jScrollPane4.setViewportView(jTP_odl);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane4)
         );
 
-        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
-        jDialog1.getContentPane().setLayout(jDialog1Layout);
-        jDialog1Layout.setHorizontalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout JDIalog_historiaLayout = new javax.swing.GroupLayout(JDIalog_historia.getContentPane());
+        JDIalog_historia.getContentPane().setLayout(JDIalog_historiaLayout);
+        JDIalog_historiaLayout.setHorizontalGroup(
+            JDIalog_historiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
         );
-        jDialog1Layout.setVerticalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        JDIalog_historiaLayout.setVerticalGroup(
+            JDIalog_historiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+        );
+
+        jDialog_oprogramie.setTitle("O Programie");
+
+        jLabel3.setFont(new java.awt.Font("sansserif", 0, 15)); // NOI18N
+        jLabel3.setText("Program oblicza temperaturę oraz odległość");
+
+        javax.swing.GroupLayout jDialog_oprogramieLayout = new javax.swing.GroupLayout(jDialog_oprogramie.getContentPane());
+        jDialog_oprogramie.getContentPane().setLayout(jDialog_oprogramieLayout);
+        jDialog_oprogramieLayout.setHorizontalGroup(
+            jDialog_oprogramieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_oprogramieLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(47, 47, 47))
+        );
+        jDialog_oprogramieLayout.setVerticalGroup(
+            jDialog_oprogramieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog_oprogramieLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jLabel3)
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -290,7 +320,9 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
+        jDialog_oprogramie.setVisible(true);
+        jDialog_oprogramie.setSize(350,200);
+        jDialog_oprogramie.setLocationRelativeTo(null);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jB_kmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_kmActionPerformed
@@ -368,16 +400,16 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        jDialog1.setVisible(true);
-        jDialog1.setSize(427,250);
-        jDialog1.setLocationRelativeTo(null);
+        JDIalog_historia.setVisible(true);
+        JDIalog_historia.setSize(300,500);
+        JDIalog_historia.setLocationRelativeTo(null);
         try{
             Scanner sc = new Scanner(a);
             String data ="";
             while(sc.hasNext()){
                 data+=sc.nextLine()+"\n";     
             }       
-            jTextArea1.setText(data);
+            jTP_temp.setText(data);
         }
         catch (FileNotFoundException ex){
             Logger.getLogger(Przeliczanie_jednostek.class.getName()).log(Level.SEVERE,null,ex);
@@ -420,16 +452,18 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
     }
     private File a;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog JDIalog_historia;
     private javax.swing.JButton jB_cm;
     private javax.swing.JButton jB_dm;
     private javax.swing.JButton jB_f;
     private javax.swing.JButton jB_k;
     private javax.swing.JButton jB_km;
-    private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog jDialog_oprogramie;
     private javax.swing.JLabel jL_wynikOdleglosc;
     private javax.swing.JLabel jL_wynikTemperatura;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -443,8 +477,10 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
     private javax.swing.JSpinner jS_c;
     private javax.swing.JSpinner jS_m;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JTextPane jTP_odl;
+    private javax.swing.JTextPane jTP_temp;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
