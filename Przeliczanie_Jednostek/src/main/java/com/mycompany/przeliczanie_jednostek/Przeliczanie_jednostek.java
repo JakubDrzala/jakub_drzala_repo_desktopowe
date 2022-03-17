@@ -408,13 +408,15 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
             String data1 ="";
             String data2 ="";
             String a = "t";
+            String b = "o";
+            char d = b.charAt(0);
             char c =a.charAt(0);
             while(sc.hasNext()){
                 if((sc.nextLine()).charAt(0) == c){
-                    data1+=sc.nextLine();
+                    data1+=sc.nextLine()+"\n";
                 }
-                else{
-                    data2+=sc.nextLine();
+                else if((sc.nextLine()).charAt(0) == d){
+                    data2+=sc.nextLine()+"\n";
                 }
             }       
             jTP_temp.setText(data1);
