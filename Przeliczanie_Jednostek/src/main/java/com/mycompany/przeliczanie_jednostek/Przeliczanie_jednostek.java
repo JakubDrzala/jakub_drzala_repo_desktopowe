@@ -405,11 +405,20 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
         JDIalog_historia.setLocationRelativeTo(null);
         try{
             Scanner sc = new Scanner(a);
-            String data ="";
+            String data1 ="";
+            String data2 ="";
+            String a = "t";
+            char c =a.charAt(0);
             while(sc.hasNext()){
-                data+=sc.nextLine()+"\n";     
+                if((sc.nextLine()).charAt(0) == c){
+                    data1+=sc.nextLine();
+                }
+                else{
+                    data2+=sc.nextLine();
+                }
             }       
-            jTP_temp.setText(data);
+            jTP_temp.setText(data1);
+            jTP_odl.setText(data2);
         }
         catch (FileNotFoundException ex){
             Logger.getLogger(Przeliczanie_jednostek.class.getName()).log(Level.SEVERE,null,ex);
