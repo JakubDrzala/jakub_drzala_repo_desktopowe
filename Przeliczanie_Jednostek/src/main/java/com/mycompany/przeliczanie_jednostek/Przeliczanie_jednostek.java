@@ -407,15 +407,12 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
             Scanner sc = new Scanner(a);
             String data1 ="";
             String data2 ="";
-            String a = "t";
-            String b = "o";
-            char d = b.charAt(0);
-            char c =a.charAt(0);
+
             while(sc.hasNext()){
-                if((sc.nextLine()).charAt(0) == c){
-                    data1+=sc.nextLine()+"\n";
+                if((sc.nextLine()).charAt(0) == 't'){
+                    data1+=sc.()+"\n";
                 }
-                else if((sc.nextLine()).charAt(0) == d){
+                else{
                     data2+=sc.nextLine()+"\n";
                 }
             }       
@@ -425,6 +422,7 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
         catch (FileNotFoundException ex){
             Logger.getLogger(Przeliczanie_jednostek.class.getName()).log(Level.SEVERE,null,ex);
         }
+        JDIalog_historia.revalidate();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
