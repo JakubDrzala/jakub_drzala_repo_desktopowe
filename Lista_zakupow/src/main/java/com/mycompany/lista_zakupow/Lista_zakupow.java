@@ -5,6 +5,7 @@
 package com.mycompany.lista_zakupow;
 
 import java.awt.event.KeyEvent;
+import java.time.LocalDate;
 
 /**
  *
@@ -15,10 +16,12 @@ public class Lista_zakupow extends javax.swing.JFrame {
     /**
      * Creates new form Lista_zakupow
      */
+    public LocalDate today = LocalDate.now();   
     public Lista_zakupow() {
         initComponents();
+        jTF_data.setText(today+"");
+        setLocationRelativeTo(null);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,13 +41,13 @@ public class Lista_zakupow extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jCB_typ = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jTF_data = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jTF_dzis = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        jTF_wydatki_tydzien = new javax.swing.JTextField();
+        jTF_wydatki_dzis = new javax.swing.JTextField();
         jB_zapis = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -87,9 +90,15 @@ public class Lista_zakupow extends javax.swing.JFrame {
 
         jLabel3.setText("Typ zakupionego towaru");
 
-        jCB_typ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCB_typ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Żywność", "Elektronika" }));
 
         jLabel4.setText("Data zakupu");
+
+        jTF_data.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTF_dataActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Dzisiejsze zakupy");
 
@@ -103,6 +112,12 @@ public class Lista_zakupow extends javax.swing.JFrame {
         jLabel6.setText("Wydatki z dzisiaj:");
 
         jLabel7.setText("Wydatki z tygodnia:");
+
+        jTF_wydatki_dzis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTF_wydatki_dzisActionPerformed(evt);
+            }
+        });
 
         jB_zapis.setText("Zapisz");
         jB_zapis.addActionListener(new java.awt.event.ActionListener() {
@@ -137,7 +152,7 @@ public class Lista_zakupow extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jB_zapis, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
-                                    .addComponent(jTextField3))))
+                                    .addComponent(jTF_data))))
                         .addGap(11, 11, 11))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,8 +165,8 @@ public class Lista_zakupow extends javax.swing.JFrame {
                             .addComponent(jLabel5))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField6)
-                            .addComponent(jTextField5))))
+                            .addComponent(jTF_wydatki_dzis)
+                            .addComponent(jTF_wydatki_tydzien))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -169,7 +184,7 @@ public class Lista_zakupow extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTF_cokupiles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTF_wartosc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTF_data, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -179,11 +194,11 @@ public class Lista_zakupow extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTF_wydatki_dzis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTF_wydatki_tydzien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 174, Short.MAX_VALUE))
                     .addComponent(jTF_dzis))
                 .addContainerGap())
@@ -258,13 +273,46 @@ public class Lista_zakupow extends javax.swing.JFrame {
 
     private void jTF_wartoscKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTF_wartoscKeyPressed
         char a = evt.getKeyChar();
-        if(a>= '1' && a<= '9'){
+        if(a>= '0' && a<= '9' || a=='.' || a==KeyEvent.VK_BACK_SPACE){
             jTF_wartosc.setEditable(true);
         }
         else{
             jTF_wartosc.setEditable(false);
 
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        char b = evt.getKeyChar();
+        if(b<='a' && b>='z'){
+            System.out.println("abc");
+        }
+        
     }//GEN-LAST:event_jTF_wartoscKeyPressed
 
     private void jTF_wartoscKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTF_wartoscKeyReleased
@@ -274,10 +322,18 @@ public class Lista_zakupow extends javax.swing.JFrame {
     private void jB_zapisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_zapisActionPerformed
         String co = jTF_cokupiles.getText();
         String wartosc = jTF_wartosc.getText();
-        String typ = jCB_typ.getValue();
+        String typ = (String) jCB_typ.getSelectedItem();
         
-        jTF_dzis.setText(co+" "+wartosc);
+        jTF_dzis.setText(co+"  "+wartosc+"  "+typ+"  "+today);
     }//GEN-LAST:event_jB_zapisActionPerformed
+
+    private void jTF_dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTF_dataActionPerformed
+
+    }//GEN-LAST:event_jTF_dataActionPerformed
+
+    private void jTF_wydatki_dzisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTF_wydatki_dzisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTF_wydatki_dzisActionPerformed
 
     /**
      * @param args the command line arguments
@@ -330,12 +386,12 @@ public class Lista_zakupow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTF_cokupiles;
+    private javax.swing.JTextField jTF_data;
     private javax.swing.JTextField jTF_dzis;
     private javax.swing.JTextField jTF_wartosc;
+    private javax.swing.JTextField jTF_wydatki_dzis;
+    private javax.swing.JTextField jTF_wydatki_tydzien;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }

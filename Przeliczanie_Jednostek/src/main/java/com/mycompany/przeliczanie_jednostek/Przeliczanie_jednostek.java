@@ -407,12 +407,11 @@ public class Przeliczanie_jednostek extends javax.swing.JFrame {
             Scanner sc = new Scanner(a);
             String data1 ="";
             String data2 ="";
-
             while(sc.hasNext()){
                 if((sc.nextLine()).charAt(0) == 't'){
-                    data1+=sc.()+"\n";
+                    data1+=sc.nextLine()+"\n";
                 }
-                else{
+                else if((sc.nextLine()).charAt(0) == 'o'){
                     data2+=sc.nextLine()+"\n";
                 }
             }       

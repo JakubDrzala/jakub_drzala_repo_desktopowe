@@ -102,7 +102,7 @@
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="jB_zapis" pref="86" max="32767" attributes="0"/>
-                                          <Component id="jTextField3" max="32767" attributes="0"/>
+                                          <Component id="jTF_data" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -122,8 +122,8 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField6" max="32767" attributes="0"/>
-                                  <Component id="jTextField5" max="32767" attributes="0"/>
+                                  <Component id="jTF_wydatki_dzis" max="32767" attributes="0"/>
+                                  <Component id="jTF_wydatki_tydzien" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -147,7 +147,7 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jTF_cokupiles" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTF_wartosc" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTF_data" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -160,12 +160,12 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTF_wydatki_dzis" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTF_wydatki_tydzien" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="174" max="32767" attributes="0"/>
                           </Group>
@@ -209,11 +209,9 @@
             <Component class="javax.swing.JComboBox" name="jCB_typ">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="2">
+                    <StringItem index="0" value="&#x17b;ywno&#x15b;&#x107;"/>
+                    <StringItem index="1" value="Elektronika"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -226,7 +224,10 @@
                 <Property name="text" type="java.lang.String" value="Data zakupu"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField3">
+            <Component class="javax.swing.JTextField" name="jTF_data">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTF_dataActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
@@ -251,9 +252,12 @@
                 <Property name="text" type="java.lang.String" value="Wydatki z tygodnia:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField5">
+            <Component class="javax.swing.JTextField" name="jTF_wydatki_tydzien">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField6">
+            <Component class="javax.swing.JTextField" name="jTF_wydatki_dzis">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTF_wydatki_dzisActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jB_zapis">
               <Properties>

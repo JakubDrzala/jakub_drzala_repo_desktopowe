@@ -1,70 +1,35 @@
-t;0.0c;273.0k
-t;0.0c;32.0f
-o;0.0m;0.0km
-o;0.0m;0.0cm
-o;0.0m;0.0dm
-o;120.0m;0.12km
-o;120.0m;12000.0cm
-o;120.0m;12000.0cm
-o;120.0m;1200.0dm
-o;120.0m;1200.0dm
-o;120.0m;1200.0dm
-o;120.0m;12000.0cm
-o;120.0m;12000.0cm
-o;120.0m;0.12km
-o;120.0m;0.12km
-t;110.0c;230.0f
-t;110.0c;230.0f
-t;110.0c;230.0f
-t;110.0c;383.0k
-t;110.0c;383.0k
-t;110.0c;383.0k
-t;110.0c;383.0k
-t;110.0c;383.0k
-t;110.0c;383.0k
-t;110.0c;383.0k
-t;110.0c;383.0k
-t;110.0c;230.0f
-t;110.0c;230.0f
-o;120.0m;0.12km
-o;120.0m;0.12km
-o;120.0m;0.12km
-o;120.0m;12000.0cm
-o;120.0m;12000.0cm
-o;120.0m;12000.0cm
-o;120.0m;1200.0dm
-o;120.0m;1200.0dm
-o;120.0m;1200.0dm
-o;120.0m;0.12km
-o;120.0m;0.12km
-o;120.0m;0.12km
-o;120.0m;0.12km
-o;120.0m;12000.0cm
-o;120.0m;12000.0cm
-o;120.0m;12000.0cm
-o;120.0m;1200.0dm
-o;120.0m;1200.0dm
-o;120.0m;1200.0dm
-t;110.0c;383.0k
-t;110.0c;383.0k
-t;110.0c;383.0k
-t;110.0c;230.0f
-t;110.0c;230.0f
-t;110.0c;230.0f
-t;110.0c;230.0f
-t;110.0c;230.0f
-t;110.0c;230.0f
-t;110.0c;383.0k
-t;110.0c;383.0k
-t;2110.0c;2383.0k
-t;2110.0c;2383.0k
-t;2110.0c;3830.0f
-t;2110.0c;3830.0f
-o;120.0m;12000.0cm
-o;120.0m;12000.0cm
-o;2120.0m;212000.0cm
-o;2120.0m;212000.0cm
-o;2120.0m;21200.0dm
-o;2120.0m;21200.0dm
-o;2120.0m;2.12km
-o;2120.0m;2.12km
+char a = evt.getKeyChar();
+        if(a>= '0' && a<= '9' || a=='.'){
+            jTF_wartosc.setEditable(true);
+        }
+        else{
+            jTF_wartosc.setEditable(false);
+
+        }
+        
+        
+        
+        a = new File("Plik.txt");
+        
+        try {
+            FileWriter fw = new FileWriter(a, true);
+            fw.write(imie+";"+nazwisko+";"+wiek+";"+miejsce+";"+o_sobie+"\n");
+            jTA_wynik.setText("");
+            fw.close();
+        }
+        catch (IOException ex){
+            Logger.getLogger(Program.class.getName()).log(Level.SEVERE,null,ex);
+        }
+        
+        
+            private File a;
+            
+            try {
+            FileWriter fw = new FileWriter(a, true);
+            fw.write(imie+";"+nazwisko+";"+wiek+";"+miejsce+";"+o_sobie+"\n");
+            jTA_wynik.setText("");
+            fw.close();
+        }
+        catch (IOException ex){
+            
+        }
