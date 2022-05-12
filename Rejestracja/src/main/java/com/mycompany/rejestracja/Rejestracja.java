@@ -17,7 +17,6 @@ public class Rejestracja extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
-            int abc = 0;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -209,8 +208,7 @@ public class Rejestracja extends javax.swing.JFrame {
             jTF_username.setForeground(new java.awt.Color(0, 0, 0));
             for(int i = 0; i<username.length();i++){
                 char a = username.charAt(i);
-                if(a>='A' && a <= 'Z' || a>='a' && a <= 'z' ){}
-                else{
+                if(Character.isDigit(a)){
                     jTF_username.setForeground(new java.awt.Color(255, 0, 0));
                 }
             }
@@ -220,7 +218,7 @@ public class Rejestracja extends javax.swing.JFrame {
         if(password.equals(c_password)){
             for(int i = 0; i<password.length();i++){
                 char a = password.charAt(i);
-                if(a>='A' && a <= 'Z' || a>='a' && a <= 'z' ){}
+                if(Character.isDigit(a)){}
                 else{
                     jTF_password.setForeground(new java.awt.Color(255, 0, 0));
                     jTF_c_password.setForeground(new java.awt.Color(255, 0, 0));
