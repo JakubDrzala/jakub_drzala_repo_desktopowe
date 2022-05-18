@@ -4,6 +4,14 @@
  */
 package com.mycompany.rejestracja;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author drzalajakub
@@ -138,6 +146,11 @@ public class Rejestracja extends javax.swing.JFrame {
         jLabel8.setText("Password");
 
         jB_logowanie.setText("Zaloguj");
+        jB_logowanie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_logowanieActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -200,16 +213,20 @@ public class Rejestracja extends javax.swing.JFrame {
         String email = jTF_email.getText();
         String password = jTF_password.getText();
         String c_password = jTF_c_password.getText();
+        boolean dobreUsername = false, dobrePassword = false;
         
         if(username.isEmpty() || username.length()<2 || username.length()>20){
             jTF_username.setForeground(new java.awt.Color(255, 0, 0));
+            dobreUsername = false;
         }
         else{
             jTF_username.setForeground(new java.awt.Color(0, 0, 0));
+            dobreUsername = true;
             for(int i = 0; i<username.length();i++){
                 char a = username.charAt(i);
                 if(Character.isDigit(a)){
                     jTF_username.setForeground(new java.awt.Color(255, 0, 0));
+                    dobreUsername = false;
                 }
             }
         }
@@ -222,22 +239,53 @@ public class Rejestracja extends javax.swing.JFrame {
                 else{
                     jTF_password.setForeground(new java.awt.Color(255, 0, 0));
                     jTF_c_password.setForeground(new java.awt.Color(255, 0, 0));
+                    dobrePassword = false;
 
                 }
                 jTF_password.setForeground(new java.awt.Color(0, 0, 0));
                 jTF_c_password.setForeground(new java.awt.Color(0, 0, 0));
+                dobrePassword = true;
             }
         }
         else{
             jTF_password.setForeground(new java.awt.Color(255, 0, 0));
             jTF_c_password.setForeground(new java.awt.Color(255, 0, 0));
+            dobrePassword = false;
         }
         
+        if(dobrePassword==true && dobreUsername==true){
+            File file = new File("sekretnehasla.csv");
+            try {
+                FileWriter fw = new FileWriter(file, true);
+                fw.write("\n"+username + ":" + email + ":" + password);
+                fw.close();
+            } catch (IOException ex) {
+                System.out.println("Nie działa");
+            }
+        }
     }//GEN-LAST:event_jB_rejestracjaActionPerformed
 
     private void jTF_usernameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTF_usernameKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_jTF_usernameKeyTyped
+
+    private void jB_logowanieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_logowanieActionPerformed
+        String log_email = jTF_log_email.getText();
+        String haslo = jTF_log_password.getText();
+        File file = new File("sekretnehasla.csv");
+        try {
+            Scanner sc = new Scanner(file);
+            while(sc.hasNext()){
+                String[] raw  = sc.next().split(":");
+                if(raw[1].equals(log_email) && raw[2].equals(haslo)){
+                    System.out.println("Działa");
+                }
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Rejestracja.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jB_logowanieActionPerformed
 
     /**
      * @param args the command line arguments
