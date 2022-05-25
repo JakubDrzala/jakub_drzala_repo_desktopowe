@@ -34,6 +34,7 @@ public class Rejestracja extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jOP_logowanie = new javax.swing.JOptionPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -42,17 +43,17 @@ public class Rejestracja extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jTF_email = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTF_password = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTF_c_password = new javax.swing.JTextField();
         jB_rejestracja = new javax.swing.JButton();
+        jTF_password = new javax.swing.JPasswordField();
+        jTF_c_password = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jTF_log_email = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTF_log_password = new javax.swing.JTextField();
         jB_logowanie = new javax.swing.JButton();
+        jTF_log_password = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,10 +94,9 @@ public class Rejestracja extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTF_password)
                     .addComponent(jTF_username)
                     .addComponent(jTF_email)
-                    .addComponent(jTF_c_password)
+                    .addComponent(jTF_password)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -105,7 +105,8 @@ public class Rejestracja extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
                             .addComponent(jB_rejestracja, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 258, Short.MAX_VALUE)))
+                        .addGap(0, 258, Short.MAX_VALUE))
+                    .addComponent(jTF_c_password))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -160,14 +161,14 @@ public class Rejestracja extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTF_log_email)
-                    .addComponent(jTF_log_password)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)
                             .addComponent(jLabel8)
                             .addComponent(jB_logowanie))
-                        .addGap(0, 305, Short.MAX_VALUE)))
+                        .addGap(0, 305, Short.MAX_VALUE))
+                    .addComponent(jTF_log_password))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -272,17 +273,23 @@ public class Rejestracja extends javax.swing.JFrame {
     private void jB_logowanieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_logowanieActionPerformed
         String log_email = jTF_log_email.getText();
         String haslo = jTF_log_password.getText();
+        String username = "imie";
+        boolean dziala = false;
         File file = new File("sekretnehasla.csv");
         try {
             Scanner sc = new Scanner(file);
             while(sc.hasNext()){
-                String[] raw  = sc.next().split(":");
-                if(raw[1].equals(log_email) && raw[2].equals(haslo)){
-                    System.out.println("Działa");
+                String[] log  = sc.next().split(":");
+                if(log[1].equals(log_email) && log[2].equals(haslo)){
+                    username = log[0];
+                    dziala = true;
                 }
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(Rejestracja.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Nie działa");
+        }
+        if(dziala==true){
+            jOP_logowanie.showMessageDialog(rootPane, "Witaj : "+username);
         }
         
     }//GEN-LAST:event_jB_logowanieActionPerformed
@@ -333,13 +340,14 @@ public class Rejestracja extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JOptionPane jOP_logowanie;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTF_c_password;
+    private javax.swing.JPasswordField jTF_c_password;
     private javax.swing.JTextField jTF_email;
     private javax.swing.JTextField jTF_log_email;
-    private javax.swing.JTextField jTF_log_password;
-    private javax.swing.JTextField jTF_password;
+    private javax.swing.JPasswordField jTF_log_password;
+    private javax.swing.JPasswordField jTF_password;
     private javax.swing.JTextField jTF_username;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
