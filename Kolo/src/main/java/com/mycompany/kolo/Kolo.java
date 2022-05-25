@@ -40,7 +40,6 @@ public class Kolo extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(450, 450));
         setResizable(false);
 
         jButton1.setMaximumSize(new java.awt.Dimension(80, 80));
