@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 public class Kolo extends javax.swing.JFrame {
         Icon krzyzyk = new ImageIcon("krzyzyk.png");
         Icon kolo = new ImageIcon("kolko.png");
+        Icon brak = new ImageIcon("brak.png");
         int kto = 0;
 
     /**
@@ -21,7 +22,32 @@ public class Kolo extends javax.swing.JFrame {
      */
     public Kolo() {
         initComponents();
+        jB_1.setEnabled(false);
+        jB_2.setEnabled(false);
+        jB_3.setEnabled(false);
+        jB_4.setEnabled(false);
+        jB_5.setEnabled(false);
+        jB_6.setEnabled(false);
+        jB_7.setEnabled(false);
+        jB_8.setEnabled(false);
+        jB_9.setEnabled(false);
+        jB_1.setIcon(brak);
+        jB_2.setIcon(brak);
+        jB_3.setIcon(brak);
+        jB_4.setIcon(brak);
+        jB_5.setIcon(brak);
+        jB_6.setIcon(brak);
+        jB_7.setIcon(brak);
+        jB_8.setIcon(brak);
+        jB_9.setIcon(brak);
     }
+    
+    public void Winner(){
+        if(jB_1.getIcon()==krzyzyk && jB_3.getIcon()==krzyzyk && jB_3.getIcon()==krzyzyk){
+            System.out.println("wygrywa krzyżyk");
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,6 +57,12 @@ public class Kolo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jF_Start = new javax.swing.JFrame();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTF_g1 = new javax.swing.JTextField();
+        jTF_g2 = new javax.swing.JTextField();
+        jB_start = new javax.swing.JButton();
         jB_1 = new javax.swing.JButton();
         jB_4 = new javax.swing.JButton();
         jB_7 = new javax.swing.JButton();
@@ -42,9 +74,62 @@ public class Kolo extends javax.swing.JFrame {
         jB_9 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        jM_nowagra = new javax.swing.JMenuItem();
+        jM_wyniki = new javax.swing.JMenuItem();
+
+        jF_Start.setTitle("Podaj nazwę graczy");
+        jF_Start.setResizable(false);
+
+        jLabel1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel1.setText("Gracz 1:");
+
+        jLabel2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel2.setText("Gracz 2:");
+
+        jB_start.setFont(new java.awt.Font("sansserif", 0, 36)); // NOI18N
+        jB_start.setText("Start");
+        jB_start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_startActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jF_StartLayout = new javax.swing.GroupLayout(jF_Start.getContentPane());
+        jF_Start.getContentPane().setLayout(jF_StartLayout);
+        jF_StartLayout.setHorizontalGroup(
+            jF_StartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jF_StartLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jF_StartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jF_StartLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTF_g1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jF_StartLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTF_g2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(16, Short.MAX_VALUE))
+            .addComponent(jB_start, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jF_StartLayout.setVerticalGroup(
+            jF_StartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jF_StartLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jF_StartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jTF_g1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
+                .addGroup(jF_StartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jTF_g2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jB_start, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Kółko i Krzyżyk");
         setResizable(false);
 
         jB_1.setMaximumSize(new java.awt.Dimension(80, 80));
@@ -119,11 +204,20 @@ public class Kolo extends javax.swing.JFrame {
             }
         });
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        jMenu1.setText("Gra");
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        jM_nowagra.setText("Nowa gra");
+        jM_nowagra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jM_nowagraActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jM_nowagra);
+
+        jM_wyniki.setText("Wyniki");
+        jMenu1.add(jM_wyniki);
+
+        jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
@@ -176,7 +270,7 @@ public class Kolo extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jB_8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jB_9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         pack();
@@ -191,6 +285,8 @@ public class Kolo extends javax.swing.JFrame {
             jB_2.setIcon(kolo);
             kto = 0;
         }
+        jB_2.setEnabled(false);
+        Winner();
     }//GEN-LAST:event_jB_2ActionPerformed
 
     private void jB_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_3ActionPerformed
@@ -202,6 +298,8 @@ public class Kolo extends javax.swing.JFrame {
             jB_3.setIcon(kolo);
             kto = 0;
         }
+        jB_3.setEnabled(false);
+        Winner();
     }//GEN-LAST:event_jB_3ActionPerformed
 
     private void jB_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_1ActionPerformed
@@ -213,6 +311,8 @@ public class Kolo extends javax.swing.JFrame {
             jB_1.setIcon(kolo);
             kto = 0;
         }
+        jB_1.setEnabled(false);
+        Winner();
     }//GEN-LAST:event_jB_1ActionPerformed
 
     private void jB_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_4ActionPerformed
@@ -224,6 +324,8 @@ public class Kolo extends javax.swing.JFrame {
             jB_4.setIcon(kolo);
             kto = 0;
         }
+        jB_4.setEnabled(false);
+        Winner();
     }//GEN-LAST:event_jB_4ActionPerformed
 
     private void jB_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_5ActionPerformed
@@ -235,6 +337,8 @@ public class Kolo extends javax.swing.JFrame {
             jB_5.setIcon(kolo);
             kto = 0;
         }
+        jB_5.setEnabled(false);
+        Winner();
     }//GEN-LAST:event_jB_5ActionPerformed
 
     private void jB_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_6ActionPerformed
@@ -246,6 +350,8 @@ public class Kolo extends javax.swing.JFrame {
             jB_6.setIcon(kolo);
             kto = 0;
         }
+        jB_6.setEnabled(false);
+        Winner();
     }//GEN-LAST:event_jB_6ActionPerformed
 
     private void jB_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_7ActionPerformed
@@ -257,6 +363,8 @@ public class Kolo extends javax.swing.JFrame {
             jB_7.setIcon(kolo);
             kto = 0;
         }
+        jB_7.setEnabled(false);
+        Winner();
     }//GEN-LAST:event_jB_7ActionPerformed
 
     private void jB_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_8ActionPerformed
@@ -268,6 +376,7 @@ public class Kolo extends javax.swing.JFrame {
             jB_8.setIcon(kolo);
             kto = 0;
         }
+       jB_8.setEnabled(false);
     }//GEN-LAST:event_jB_8ActionPerformed
 
     private void jB_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_9ActionPerformed
@@ -279,7 +388,38 @@ public class Kolo extends javax.swing.JFrame {
             jB_9.setIcon(kolo);
             kto = 0;
         }
+        jB_9.setEnabled(false);
+        Winner();
     }//GEN-LAST:event_jB_9ActionPerformed
+
+    private void jM_nowagraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jM_nowagraActionPerformed
+        jF_Start.setVisible(true);
+        jF_Start.setSize(300, 250);
+    }//GEN-LAST:event_jM_nowagraActionPerformed
+
+    private void jB_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_startActionPerformed
+       jB_1.setEnabled(true);
+       jB_2.setEnabled(true);
+       jB_3.setEnabled(true);
+       jB_4.setEnabled(true);
+       jB_5.setEnabled(true);
+       jB_6.setEnabled(true);
+       jB_7.setEnabled(true);
+       jB_8.setEnabled(true);
+       jB_9.setEnabled(true);
+       
+       jB_1.setIcon(brak);
+       jB_2.setIcon(brak);
+       jB_3.setIcon(brak);
+       jB_4.setIcon(brak);
+       jB_5.setIcon(brak);
+       jB_6.setIcon(brak);
+       jB_7.setIcon(brak);
+       jB_8.setIcon(brak);
+       jB_9.setIcon(brak);
+       
+       jF_Start.setVisible(false);
+    }//GEN-LAST:event_jB_startActionPerformed
 
     /**
      * @param args the command line arguments
@@ -326,8 +466,15 @@ public class Kolo extends javax.swing.JFrame {
     private javax.swing.JButton jB_7;
     private javax.swing.JButton jB_8;
     private javax.swing.JButton jB_9;
+    private javax.swing.JButton jB_start;
+    private javax.swing.JFrame jF_Start;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenuItem jM_nowagra;
+    private javax.swing.JMenuItem jM_wyniki;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JTextField jTF_g1;
+    private javax.swing.JTextField jTF_g2;
     // End of variables declaration//GEN-END:variables
 }
