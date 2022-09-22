@@ -90,6 +90,7 @@ public class Strona extends javax.swing.JFrame {
             }
         });
 
+        jTA_dekod.setEditable(false);
         jTA_dekod.setColumns(20);
         jTA_dekod.setRows(5);
         jScrollPane1.setViewportView(jTA_dekod);
@@ -186,11 +187,8 @@ public class Strona extends javax.swing.JFrame {
     }//GEN-LAST:event_jB_zakodujActionPerformed
 
     private void jB_wyczyscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_wyczyscActionPerformed
-        if(JRB_kodowanie.isSelected()){
-        }
-        
-        if(JRB_dekodowanie.isSelected()){
-        }
+        jTA_kod.setText("");
+        jTA_dekod.setText("");
     }//GEN-LAST:event_jB_wyczyscActionPerformed
 
     private void jB_zapisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_zapisActionPerformed
@@ -214,6 +212,7 @@ public class Strona extends javax.swing.JFrame {
             }       
             jTA_dekod.setText(dane);
         } catch (Exception e) {
+
         }
         }
     }//GEN-LAST:event_jB_zapisActionPerformed
