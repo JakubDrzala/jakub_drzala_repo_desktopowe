@@ -4,6 +4,14 @@
  */
 package com.mycompany.kodowanie;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author drzalajakub
@@ -15,6 +23,8 @@ public class Strona extends javax.swing.JFrame {
      */
     public Strona() {
         initComponents();
+        setLocationRelativeTo(null);
+        a = new File("tajne.txt");
     }
 
     /**
@@ -34,32 +44,63 @@ public class Strona extends javax.swing.JFrame {
         jB_wyczysc = new javax.swing.JButton();
         jB_zapis = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTA_dekod = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jTA_kod = new javax.swing.JTextArea();
+        jL_tekst = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kodowanie_Dekodowanie");
 
         buttonGroup1.add(JRB_kodowanie);
+        JRB_kodowanie.setSelected(true);
         JRB_kodowanie.setText("Kodowanie");
+        JRB_kodowanie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_kodowanieActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(JRB_dekodowanie);
         JRB_dekodowanie.setText("Dekodowanie");
+        JRB_dekodowanie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_dekodowanieActionPerformed(evt);
+            }
+        });
 
         jB_zakoduj.setText("Zakoduj");
+        jB_zakoduj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_zakodujActionPerformed(evt);
+            }
+        });
 
         jB_wyczysc.setText("Wyczyść");
+        jB_wyczysc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_wyczyscActionPerformed(evt);
+            }
+        });
 
         jB_zapis.setText("Zapisz");
+        jB_zapis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_zapisActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTA_dekod.setColumns(20);
+        jTA_dekod.setRows(5);
+        jScrollPane1.setViewportView(jTA_dekod);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        jTA_kod.setColumns(20);
+        jTA_kod.setRows(5);
+        jScrollPane2.setViewportView(jTA_kod);
+
+        jL_tekst.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jL_tekst.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jL_tekst.setText("Zakodowany tekst");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -82,7 +123,9 @@ public class Strona extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jB_wyczysc, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jB_zapis, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jB_zapis, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jL_tekst, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -96,11 +139,12 @@ public class Strona extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jB_zakoduj)
                     .addComponent(jB_wyczysc)
-                    .addComponent(jB_zapis))
+                    .addComponent(jB_zapis)
+                    .addComponent(jL_tekst))
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -119,6 +163,60 @@ public class Strona extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JRB_kodowanieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_kodowanieActionPerformed
+        jL_tekst.setText("Zakodowany tekst");
+        jB_zakoduj.setText("Zakoduj");
+        jB_zapis.setText("Zapisz");
+    }//GEN-LAST:event_JRB_kodowanieActionPerformed
+
+    private void JRB_dekodowanieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_dekodowanieActionPerformed
+        jL_tekst.setText("Odkodowany tekst");
+        jB_zakoduj.setText("Odkoduj");
+        jB_zapis.setText("Wczytaj");
+        
+    }//GEN-LAST:event_JRB_dekodowanieActionPerformed
+
+    private void jB_zakodujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_zakodujActionPerformed
+        if(JRB_kodowanie.isSelected()){
+        }
+        
+        if(JRB_dekodowanie.isSelected()){
+        }
+    }//GEN-LAST:event_jB_zakodujActionPerformed
+
+    private void jB_wyczyscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_wyczyscActionPerformed
+        if(JRB_kodowanie.isSelected()){
+        }
+        
+        if(JRB_dekodowanie.isSelected()){
+        }
+    }//GEN-LAST:event_jB_wyczyscActionPerformed
+
+    private void jB_zapisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_zapisActionPerformed
+        if(JRB_kodowanie.isSelected()){
+            haslo = jTA_kod.getText();
+            try {
+                FileWriter fw = new FileWriter(a, true);
+                fw.write(haslo);
+                fw.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Strona.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        if(JRB_dekodowanie.isSelected()){
+            try {
+            Scanner sc = new Scanner(a);
+            String dane = "";
+            while(sc.hasNext()){
+                dane+=sc.nextLine()+"\n";     
+            }       
+            jTA_dekod.setText(dane);
+        } catch (Exception e) {
+        }
+        }
+    }//GEN-LAST:event_jB_zapisActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,7 +252,8 @@ public class Strona extends javax.swing.JFrame {
             }
         });
     }
-
+    private File a;
+    public String haslo;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton JRB_dekodowanie;
     private javax.swing.JRadioButton JRB_kodowanie;
@@ -162,10 +261,11 @@ public class Strona extends javax.swing.JFrame {
     private javax.swing.JButton jB_wyczysc;
     private javax.swing.JButton jB_zakoduj;
     private javax.swing.JButton jB_zapis;
+    private javax.swing.JLabel jL_tekst;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTA_dekod;
+    private javax.swing.JTextArea jTA_kod;
     // End of variables declaration//GEN-END:variables
 }
