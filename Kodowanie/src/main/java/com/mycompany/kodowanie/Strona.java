@@ -169,6 +169,7 @@ public class Strona extends javax.swing.JFrame {
         jL_tekst.setText("Zakodowany tekst");
         jB_zakoduj.setText("Zakoduj");
         jB_zapis.setText("Zapisz");
+        
     }//GEN-LAST:event_JRB_kodowanieActionPerformed
 
     private void JRB_dekodowanieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_dekodowanieActionPerformed
@@ -195,7 +196,7 @@ public class Strona extends javax.swing.JFrame {
         if(JRB_kodowanie.isSelected()){
             haslo = jTA_kod.getText();
             try {
-                FileWriter fw = new FileWriter(a, true);
+                FileWriter fw = new FileWriter(a);
                 fw.write(haslo);
                 fw.close();
             } catch (IOException ex) {
