@@ -24,7 +24,7 @@ public class Strona extends javax.swing.JFrame {
     public Strona() {
         initComponents();
         setLocationRelativeTo(null);
-        a = new File("tajne.txt");
+        file = new File("tajne.txt");
     }
 
     /**
@@ -181,23 +181,45 @@ public class Strona extends javax.swing.JFrame {
 
     private void jB_zakodujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_zakodujActionPerformed
         if(JRB_kodowanie.isSelected()){
+            odkod = jTA_kod.getText();
+            for(int e = 0; e < odkod.length(); e++){
+                for(int i = 0; i < alfabet.length(); i++){
+                    if(odkod.charAt(e)==alfabet.charAt(i)){
+                        haslo += alfabet.charAt(i+5)+"";
+                    }    
+                }
+            }
+//            haslo = haslo.substring(4, (haslo.length()));
+            jTA_dekod.setText(haslo);
         }
         
         if(JRB_dekodowanie.isSelected()){
+            haslo = jTA_kod.getText();
+            for(int e = 0; e < haslo.length(); e++){
+                for(int i = 0; i < alfabet.length(); i++){
+                    if(haslo.charAt(e)==alfabet.charAt(i)){
+                        zakod += alfabet.charAt(i+(-5))+"";
+                        System.out.println(zakod);
+                    }    
+                }
+            }
+//            zakod = zakod.substring(4, (zakod.length()));
+            jTA_dekod.setText(zakod);
         }
     }//GEN-LAST:event_jB_zakodujActionPerformed
 
     private void jB_wyczyscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_wyczyscActionPerformed
         jTA_kod.setText("");
         jTA_dekod.setText("");
+        haslo = "";
     }//GEN-LAST:event_jB_wyczyscActionPerformed
 
     private void jB_zapisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_zapisActionPerformed
         if(JRB_kodowanie.isSelected()){
-            haslo = jTA_kod.getText();
+            zakod = jTA_kod.getText();
             try {
-                FileWriter fw = new FileWriter(a);
-                fw.write(haslo);
+                FileWriter fw = new FileWriter(file);
+                fw.write(zakod);
                 fw.close();
             } catch (IOException ex) {
                 Logger.getLogger(Strona.class.getName()).log(Level.SEVERE, null, ex);
@@ -206,7 +228,7 @@ public class Strona extends javax.swing.JFrame {
         
         if(JRB_dekodowanie.isSelected()){
             try {
-            Scanner sc = new Scanner(a);
+            Scanner sc = new Scanner(file);
             String dane = "";
             while(sc.hasNext()){
                 dane+=sc.nextLine()+"\n";     
@@ -252,8 +274,11 @@ public class Strona extends javax.swing.JFrame {
             }
         });
     }
-    private File a;
-    public String haslo;
+    private File file;
+    public String zakod = "";
+    public String odkod = "";
+    public String haslo = "";
+    public String alfabet = "abcdefghijklmnopqrstuvwxyz"; 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton JRB_dekodowanie;
     private javax.swing.JRadioButton JRB_kodowanie;
