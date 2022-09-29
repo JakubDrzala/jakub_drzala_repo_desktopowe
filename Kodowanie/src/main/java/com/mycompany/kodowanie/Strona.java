@@ -183,9 +183,9 @@ public class Strona extends javax.swing.JFrame {
         if(JRB_kodowanie.isSelected()){
             odkod = jTA_kod.getText();
             for(int e = 0; e < odkod.length(); e++){
-                for(int i = 0; i < alfabet.length(); i++){
+                for(int i = 0; i < (alfabet.length()-klucz); i++){
                     if(odkod.charAt(e)==alfabet.charAt(i)){
-                        haslo += alfabet.charAt(i+5)+"";
+                        haslo += alfabet.charAt(i+klucz)+"";
                     }    
                 }
             }
@@ -195,10 +195,9 @@ public class Strona extends javax.swing.JFrame {
         if(JRB_dekodowanie.isSelected()){
             haslo = jTA_kod.getText();
             for(int e = 0; e < haslo.length(); e++){
-                for(int i = 0; i < alfabet.length(); i++){
+                for(int i = 0; i < (alfabet.length()-klucz); i++){
                     if(haslo.charAt(e)==alfabet.charAt(i)){
-                        zakod += alfabet.charAt(i+(-5))+"";
-                        System.out.println(zakod);
+                        zakod += alfabet.charAt(i-klucz)+"";
                     }    
                 }
             }
@@ -210,6 +209,7 @@ public class Strona extends javax.swing.JFrame {
         jTA_kod.setText("");
         jTA_dekod.setText("");
         haslo = "";
+        zakod = "";
     }//GEN-LAST:event_jB_wyczyscActionPerformed
 
     private void jB_zapisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_zapisActionPerformed
@@ -273,10 +273,11 @@ public class Strona extends javax.swing.JFrame {
         });
     }
     private File file;
+    public int klucz = 5;
     public String zakod = "";
     public String odkod = "";
     public String haslo = "";
-    public String alfabet = "abcdefghijklmnopqrstuvwxyz";
+    public String alfabet = "abcdefghijklmnopqrstuvwxyzabcde";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton JRB_dekodowanie;
     private javax.swing.JRadioButton JRB_kodowanie;
