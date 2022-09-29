@@ -189,7 +189,6 @@ public class Strona extends javax.swing.JFrame {
                     }    
                 }
             }
-//            haslo = haslo.substring(4, (haslo.length()));
             jTA_dekod.setText(haslo);
         }
         
@@ -203,7 +202,6 @@ public class Strona extends javax.swing.JFrame {
                     }    
                 }
             }
-//            zakod = zakod.substring(4, (zakod.length()));
             jTA_dekod.setText(zakod);
         }
     }//GEN-LAST:event_jB_zakodujActionPerformed
@@ -278,7 +276,7 @@ public class Strona extends javax.swing.JFrame {
     public String zakod = "";
     public String odkod = "";
     public String haslo = "";
-    public String alfabet = "abcdefghijklmnopqrstuvwxyz"; 
+    public String alfabet = "abcdefghijklmnopqrstuvwxyz";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton JRB_dekodowanie;
     private javax.swing.JRadioButton JRB_kodowanie;
