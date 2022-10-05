@@ -197,7 +197,7 @@ public class Strona extends javax.swing.JFrame {
             for(int e = 0; e < haslo.length(); e++){
                 for(int i = 0; i < (alfabet.length()-klucz); i++){
                     if(haslo.charAt(e)==alfabet.charAt(i+klucz)){
-                        zakod += alfabet.charAt(i-klucz)+"";
+                        zakod += alfabet.charAt(i)+"";
                     }    
                 }
             }
